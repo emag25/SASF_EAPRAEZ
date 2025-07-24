@@ -74,11 +74,11 @@ DELETE FROM dbo.Usuario;
 
 INSERT INTO dbo.Usuario (NombreCompleto, Correo, Telefono, Rol)
 VALUES 
-('Ana Torres', 'ana.torres@krugercorp.com', '0991234567', 'ADMIN'),
-('Luis Pérez', 'luis.perez@krugercorp.com', '0987654321', 'EDITOR'),
-('Marta Ruiz', 'marta.ruiz@krugercorp.com', '0971122334', 'VIEWER'),
-('Carlos León', 'carlos.leon@krugercorp.com', '0969988776', 'EDITOR'),
-('Diana Vélez', 'diana.velez@krugercorp.com', '0955544332', 'VIEWER');
+('Ana María Torres Palacios', 'ana.torres@krugercorp.com', '0991234567', 'ADMIN'),
+('Luis Miguel Pérez Peña', 'luis.perez@krugercorp.com', '0987654321', 'EDITOR'),
+('Martha Piedad Ruiz Ortiz', 'marta.ruiz@krugercorp.com', '0971122334', 'VIEWER'),
+('Carlos Xavier León Mena', 'carlos.leon@krugercorp.com', '0969988776', 'EDITOR'),
+('Diana Daniela Vélez García', 'diana.velez@krugercorp.com', '0955544332', 'VIEWER');
 
 
 
