@@ -1,8 +1,7 @@
-﻿using System.Net;
-
-namespace SASF_EAPRAEZ_KRUGER.Exceptions.Models
+﻿
+namespace SASF_EAPRAEZ_KRUGER.Middleware.Models
 {
-    public class ErrorModel
+    public class ErrorResponse
     {
 
         public string Mensaje { get; set; }

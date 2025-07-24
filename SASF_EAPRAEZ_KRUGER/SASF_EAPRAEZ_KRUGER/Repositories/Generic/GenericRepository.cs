@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SASF_EAPRAEZ_KRUGER.Entities;
+using SASF_EAPRAEZ_KRUGER.Data;
 
 namespace SASF_EAPRAEZ_KRUGER.Repositories.Generic
 {

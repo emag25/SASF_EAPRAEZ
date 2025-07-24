@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SASF_EAPRAEZ_KRUGER.DTOs.Usuario;
-using SASF_EAPRAEZ_KRUGER.Exceptions.Models;
+using SASF_EAPRAEZ_KRUGER.Middleware.Models;
 using SASF_EAPRAEZ_KRUGER.Services.Usuarios;
 
 namespace SASF_EAPRAEZ_KRUGER.Controllers
@@ -22,8 +22,8 @@ namespace SASF_EAPRAEZ_KRUGER.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(List<UsuarioDTO>), 200)]
-        [ProducesResponseType(typeof(ErrorModel), 400)]
-        [ProducesResponseType(typeof(ErrorModel), 500)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [ProducesResponseType(typeof(ErrorResponse), 500)]
         public async Task<ActionResult<List<UsuarioDTO>>> ObtenerTodos()
         {
             List<UsuarioDTO> usuarios = await _usuarioService.ConsultarUsuariosAsync();
@@ -35,8 +35,8 @@ namespace SASF_EAPRAEZ_KRUGER.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(List<UsuarioDTO>), 201)]
-        [ProducesResponseType(typeof(ErrorModel), 400)]
-        [ProducesResponseType(typeof(ErrorModel), 500)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [ProducesResponseType(typeof(ErrorResponse), 500)]
         public async Task<ActionResult<UsuarioDTO>> Insertar(
             [FromBody] UsuarioCreacionDTO dto)
         {
@@ -50,9 +50,9 @@ namespace SASF_EAPRAEZ_KRUGER.Controllers
 
         [HttpPut("{id:guid}")]
         [ProducesResponseType(204)]
-        [ProducesResponseType(typeof(ErrorModel), 400)]
-        [ProducesResponseType(typeof(ErrorModel), 404)]
-        [ProducesResponseType(typeof(ErrorModel), 500)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [ProducesResponseType(typeof(ErrorResponse), 404)]
+        [ProducesResponseType(typeof(ErrorResponse), 500)]
         public async Task<IActionResult> Actualizar(
             Guid id, 
             [FromBody] UsuarioDTO usuarioDTO)
@@ -67,9 +67,9 @@ namespace SASF_EAPRAEZ_KRUGER.Controllers
 
         [HttpDelete("{id:guid}")]
         [ProducesResponseType(204)]
-        [ProducesResponseType(typeof(ErrorModel), 400)]
-        [ProducesResponseType(typeof(ErrorModel), 404)]
-        [ProducesResponseType(typeof(ErrorModel), 500)]
+        [ProducesResponseType(typeof(ErrorResponse), 400)]
+        [ProducesResponseType(typeof(ErrorResponse), 404)]
+        [ProducesResponseType(typeof(ErrorResponse), 500)]
         public async Task<IActionResult> Eliminar(Guid id)
         {
 

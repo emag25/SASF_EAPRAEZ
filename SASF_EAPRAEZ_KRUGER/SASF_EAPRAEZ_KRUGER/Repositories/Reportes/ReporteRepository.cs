@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SASF_EAPRAEZ_KRUGER.Data;
 using SASF_EAPRAEZ_KRUGER.Entities;
 using SASF_EAPRAEZ_KRUGER.Utils;
 

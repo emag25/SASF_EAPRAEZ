@@ -1,12 +1,12 @@
 ﻿using SASF_EAPRAEZ_KRUGER.Exceptions.BadRequest;
 using SASF_EAPRAEZ_KRUGER.Exceptions.InternalServerError;
-using SASF_EAPRAEZ_KRUGER.Exceptions.Models;
 using SASF_EAPRAEZ_KRUGER.Exceptions.NotFound;
+using SASF_EAPRAEZ_KRUGER.Middleware.Models;
 using SASF_EAPRAEZ_KRUGER.Utils;
 using System.Net;
 using System.Text.Json;
 
-namespace SASF_EAPRAEZ_KRUGER.Exceptions
+namespace SASF_EAPRAEZ_KRUGER.Middleware
 {
     public class ExceptionHandlingMiddleware
     {
@@ -39,7 +39,7 @@ namespace SASF_EAPRAEZ_KRUGER.Exceptions
             context.Response.ContentType = "application/json";
 
 
-            ErrorModel errorResponse = new()
+            ErrorResponse errorResponse = new()
             {
                 Mensaje = ex.Message,
                 Excepcion = ex.GetType().Name.ToString()

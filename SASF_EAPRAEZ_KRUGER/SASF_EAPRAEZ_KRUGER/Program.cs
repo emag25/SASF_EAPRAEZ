@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using SASF_EAPRAEZ_KRUGER.Entities;
-using SASF_EAPRAEZ_KRUGER.Exceptions;
-using SASF_EAPRAEZ_KRUGER.Exceptions.Filters;
+using SASF_EAPRAEZ_KRUGER.Data;
+using SASF_EAPRAEZ_KRUGER.Filters;
+using SASF_EAPRAEZ_KRUGER.Middleware;
 using SASF_EAPRAEZ_KRUGER.Repositories.Actividades;
 using SASF_EAPRAEZ_KRUGER.Repositories.Generic;
 using SASF_EAPRAEZ_KRUGER.Repositories.Proyectos;
@@ -35,7 +35,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c => { 
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "GESTIÓN DE PROYECTO (SASF EAPRAEZ)", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "GESTIÓN DE PROYECTOS (SASF EAPRAEZ)", Version = "v1" });
  });
 
 

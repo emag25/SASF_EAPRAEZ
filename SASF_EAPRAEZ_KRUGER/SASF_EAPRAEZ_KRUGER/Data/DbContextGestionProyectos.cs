@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using SASF_EAPRAEZ_KRUGER.Entities;
 
-namespace SASF_EAPRAEZ_KRUGER.Entities;
+namespace SASF_EAPRAEZ_KRUGER.Data;
 
 public partial class DbContextGestionProyectos : DbContext
 {
