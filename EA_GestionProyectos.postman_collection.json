@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "96d4e731-500c-4216-83d1-aa7862953046",
+		"name": "EA_GestionProyectos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22812919"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7235/api/usuarios",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombreCompleto\": \"Emely Mishell Apráez González\",\n  \"correo\": \"emely.apraez@krugercorp.com\",\n  \"telefono\": \"0961067598\",\n  \"rol\": \"ADMIN\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7235/api/usuarios",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usuarioId\": \"109aac95-5b68-f011-bbcc-f47b0911b448\",\n\t\"nombreCompleto\": \"Ana Torres\",\n\t\"correo\": \"ana.torres@example.com\",\n\t\"telefono\": \"0991234567\",\n\t\"rol\": \"ADMIN\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7235/api/usuarios/109aac95-5b68-f011-bbcc-f47b0911b448",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"usuarios",
+								"109aac95-5b68-f011-bbcc-f47b0911b448"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7235/api/usuarios/109aac95-5b68-f011-bbcc-f47b0911b448",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"usuarios",
+								"109aac95-5b68-f011-bbcc-f47b0911b448"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proyectos",
+			"item": [
+				{
+					"name": "Listar Proyectos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7235/api/proyectos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"proyectos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Proyecto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Mejoras módulo de Bancos\",\n  \"descripcion\": \"Se integrarán submódulos para control y seguimiento de partidas conciliatorias.\",\n  \"fechaInicio\": \"2025-07-24\",\n  \"fechaFin\": \"2025-08-30\",\n  \"usuarioId\": \"119aac95-5b68-f011-bbcc-f47b0911b448\",\n  \"estado\": \"ACTIVO\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7235/api/proyectos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"proyectos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Proyecto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \t\"proyectoId\": \"3413dee0-4946-42db-bc38-2729cc69d411\",\n\t\"nombre\": \"Aplicación Móvil de Tareas\",\n\t\"descripcion\": \"App Android para gestionar tareas diarias\",\n\t\"fechaInicio\": \"2025-05-15\",\n\t\"fechaFin\": \"2025-10-31\",\n\t\"estado\": \"ACTIVO\",\n\t\"usuarioId\": \"129aac95-5b68-f011-bbcc-f47b0911b448\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7235/api/proyectos/3413dee0-4946-42db-bc38-2729cc69d411",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"proyectos",
+								"3413dee0-4946-42db-bc38-2729cc69d411"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Proyecto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7235/api/proyectos/c36ee9c5-20e0-47ef-a07a-25c6eae4669e",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"proyectos",
+								"c36ee9c5-20e0-47ef-a07a-25c6eae4669e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actividades",
+			"item": [
+				{
+					"name": "Listar Actividades",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7235/api/actividades",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"actividades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Actividad",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titulo\": \"Crear componente validador genérico\",\n  \"descripcion\": \"Bajo cada input debe aparecer un componente que indique el mensaje de error o información.\",\n  \"fecha\": \"2025-07-23\",\n  \"horasEstimadas\": 16,\n  \"proyectoId\": \"67641d3f-9528-414d-b209-eacedf505080\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7235/api/actividades",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"actividades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Actividad",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \t\"horasReales\": 0,\n\t\"actividadId\": \"159aac95-5b68-f011-bbcc-f47b0911b448\",\n\t\"titulo\": \"Diseño de Base de Datos\",\n\t\"descripcion\": \"Definición del modelo relacional\",\n\t\"fecha\": \"2025-07-23\",\n\t\"horasEstimadas\": 8,\n\t\"proyectoId\": \"67641d3f-9528-414d-b209-eacedf505080\"\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7235/api/actividades/159aac95-5b68-f011-bbcc-f47b0911b448",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"actividades",
+								"159aac95-5b68-f011-bbcc-f47b0911b448"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Actividad",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7235/api/actividades/159aac95-5b68-f011-bbcc-f47b0911b448",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"actividades",
+								"159aac95-5b68-f011-bbcc-f47b0911b448"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reportes",
+			"item": [
+				{
+					"name": "Reporte de Actividades por Usuario y Fechas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7235/api/reportes/actividades?usuarioId=119aac95-5b68-f011-bbcc-f47b0911b448&desde=2024-01-01&hasta=2025-12-31",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7235",
+							"path": [
+								"api",
+								"reportes",
+								"actividades"
+							],
+							"query": [
+								{
+									"key": "usuarioId",
+									"value": "119aac95-5b68-f011-bbcc-f47b0911b448"
+								},
+								{
+									"key": "desde",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "hasta",
+									"value": "2025-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

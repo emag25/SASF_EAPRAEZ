@@ -74,18 +74,18 @@ DELETE FROM dbo.Usuario;
 
 INSERT INTO dbo.Usuario (NombreCompleto, Correo, Telefono, Rol)
 VALUES 
-('Ana Torres', 'ana.torres@example.com', '0991234567', 'ADMIN'),
-('Luis Pérez', 'luis.perez@example.com', '0987654321', 'EDITOR'),
-('Marta Ruiz', 'marta.ruiz@example.com', '0971122334', 'VIEWER'),
-('Carlos León', 'carlos.leon@example.com', '0969988776', 'EDITOR'),
-('Diana Vélez', 'diana.velez@example.com', '0955544332', 'VIEWER');
+('Ana Torres', 'ana.torres@krugercorp.com', '0991234567', 'ADMIN'),
+('Luis Pérez', 'luis.perez@krugercorp.com', '0987654321', 'EDITOR'),
+('Marta Ruiz', 'marta.ruiz@krugercorp.com', '0971122334', 'VIEWER'),
+('Carlos León', 'carlos.leon@krugercorp.com', '0969988776', 'EDITOR'),
+('Diana Vélez', 'diana.velez@krugercorp.com', '0955544332', 'VIEWER');
 
 
 
 -- (Usuarios a asociar)
-DECLARE @Usuario1 UNIQUEIDENTIFIER = (SELECT TOP 1 UsuarioId FROM dbo.Usuario WHERE Correo = 'ana.torres@example.com');
-DECLARE @Usuario2 UNIQUEIDENTIFIER = (SELECT TOP 1 UsuarioId FROM dbo.Usuario WHERE Correo = 'luis.perez@example.com');
-DECLARE @Usuario3 UNIQUEIDENTIFIER = (SELECT TOP 1 UsuarioId FROM dbo.Usuario WHERE Correo = 'marta.ruiz@example.com');
+DECLARE @Usuario1 UNIQUEIDENTIFIER = (SELECT TOP 1 UsuarioId FROM dbo.Usuario WHERE Correo = 'ana.torres@krugercorp.com');
+DECLARE @Usuario2 UNIQUEIDENTIFIER = (SELECT TOP 1 UsuarioId FROM dbo.Usuario WHERE Correo = 'luis.perez@krugercorp.com');
+DECLARE @Usuario3 UNIQUEIDENTIFIER = (SELECT TOP 1 UsuarioId FROM dbo.Usuario WHERE Correo = 'marta.ruiz@krugercorp.com');
 
 -- (GUID de los proyectos)
 DECLARE @Proyecto1 UNIQUEIDENTIFIER = NEWID();
