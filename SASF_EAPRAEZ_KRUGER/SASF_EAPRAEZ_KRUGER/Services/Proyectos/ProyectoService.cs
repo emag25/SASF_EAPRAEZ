@@ -9,7 +9,7 @@ using SASF_EAPRAEZ_KRUGER.Utils;
 
 namespace SASF_EAPRAEZ_KRUGER.Services.Proyectos
 {
-    public class ProyectoService: IProyectoService
+    public class ProyectoService : IProyectoService
     {
 
         private readonly IProyectoRepository _proyectoRepository;

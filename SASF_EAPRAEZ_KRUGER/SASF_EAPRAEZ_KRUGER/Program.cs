@@ -4,9 +4,11 @@ using Microsoft.OpenApi.Models;
 using SASF_EAPRAEZ_KRUGER.Entities;
 using SASF_EAPRAEZ_KRUGER.Exceptions;
 using SASF_EAPRAEZ_KRUGER.Exceptions.Filters;
+using SASF_EAPRAEZ_KRUGER.Repositories.Actividades;
 using SASF_EAPRAEZ_KRUGER.Repositories.Generic;
 using SASF_EAPRAEZ_KRUGER.Repositories.Proyectos;
 using SASF_EAPRAEZ_KRUGER.Repositories.Usuarios;
+using SASF_EAPRAEZ_KRUGER.Services.Actividades;
 using SASF_EAPRAEZ_KRUGER.Services.Proyectos;
 using SASF_EAPRAEZ_KRUGER.Services.Usuarios;
 
@@ -43,6 +45,9 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 builder.Services.AddScoped<IProyectoRepository, ProyectoRepository>();
 builder.Services.AddScoped<IProyectoService, ProyectoService>();
+
+builder.Services.AddScoped<IActividadRepository, ActividadRepository>();
+builder.Services.AddScoped<IActividadService, ActividadService>();
 
 
 var app = builder.Build();

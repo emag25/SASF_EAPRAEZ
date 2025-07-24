@@ -23,19 +23,5 @@ namespace SASF_EAPRAEZ_KRUGER.Repositories.Proyectos
                                                           u.ProyectoId == id);
         }
 
-
-        public async Task<bool> ExisteProyectoPorIDAsync(Guid id)
-        {
-            return await _dbSet.AnyAsync(u => !u.Estado.Equals(Constantes.ESTADO_ELIMINADO) &&
-                                               u.ProyectoId == id);
-        }
-
-
-        public async Task<bool> ExisteProyectoPorFechaAsync(DateOnly fecha)
-        {
-            return await _dbSet.AnyAsync(u => !u.Estado.Equals(Constantes.ESTADO_ELIMINADO) &&
-                                               u.FechaInicio >= fecha || u.FechaFin <= fecha);
-        }
-
     }
 }

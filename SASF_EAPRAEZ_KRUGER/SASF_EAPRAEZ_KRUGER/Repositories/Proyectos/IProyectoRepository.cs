@@ -10,9 +10,6 @@ namespace SASF_EAPRAEZ_KRUGER.Repositories.Proyectos
 
         Task<Proyecto?> ConsultarProyectoPorIdAsync(Guid id);
 
-        Task<bool> ExisteProyectoPorIDAsync(Guid id);
-
-        Task<bool> ExisteProyectoPorFechaAsync(DateOnly fecha);
 
     }
 }
