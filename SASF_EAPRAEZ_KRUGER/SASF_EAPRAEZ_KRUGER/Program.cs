@@ -7,9 +7,11 @@ using SASF_EAPRAEZ_KRUGER.Exceptions.Filters;
 using SASF_EAPRAEZ_KRUGER.Repositories.Actividades;
 using SASF_EAPRAEZ_KRUGER.Repositories.Generic;
 using SASF_EAPRAEZ_KRUGER.Repositories.Proyectos;
+using SASF_EAPRAEZ_KRUGER.Repositories.Reportes;
 using SASF_EAPRAEZ_KRUGER.Repositories.Usuarios;
 using SASF_EAPRAEZ_KRUGER.Services.Actividades;
 using SASF_EAPRAEZ_KRUGER.Services.Proyectos;
+using SASF_EAPRAEZ_KRUGER.Services.Reportes;
 using SASF_EAPRAEZ_KRUGER.Services.Usuarios;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,7 +39,8 @@ builder.Services.AddSwaggerGen(c => {
  });
 
 
-// --
+// Registro de dependencias
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
@@ -48,6 +51,9 @@ builder.Services.AddScoped<IProyectoService, ProyectoService>();
 
 builder.Services.AddScoped<IActividadRepository, ActividadRepository>();
 builder.Services.AddScoped<IActividadService, ActividadService>();
+
+builder.Services.AddScoped<IReporteRepository, ReporteRepository>();
+builder.Services.AddScoped<IReporteService, ReporteService>();
 
 
 var app = builder.Build();

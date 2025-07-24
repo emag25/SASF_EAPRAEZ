@@ -27,10 +27,5 @@ namespace SASF_EAPRAEZ_KRUGER.Utils
         public const string MENSAJE_ERROR_500 = "Ha ocurrido un error, intente nuevamente.";
 
 
-        // CODIGOS DE RESPUESTA PERSONALIZADOS PARA LA APLICACION
-
-        public const int CODIGO_EXITO = 0000;
-        public const int CODIGO_ERROR = 9999;
-
     }
 }
