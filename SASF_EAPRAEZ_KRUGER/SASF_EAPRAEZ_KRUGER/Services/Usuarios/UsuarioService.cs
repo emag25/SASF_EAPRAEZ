@@ -20,7 +20,7 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Usuarios
         }
 
 
-        public async Task<List<UsuarioDTO>> ObtenerTodosAsync()
+        public async Task<List<UsuarioDTO>> ConsultarUsuariosAsync()
         {
 
             List<Usuario> usuariosList = await _usuarioRepository.ConsultarUsuariosAsync();

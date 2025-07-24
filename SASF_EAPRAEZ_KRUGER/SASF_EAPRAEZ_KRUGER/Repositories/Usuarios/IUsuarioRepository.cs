@@ -11,6 +11,8 @@ namespace SASF_EAPRAEZ_KRUGER.Repositories.Usuarios
 
         Task<Usuario?> ConsultarUsuarioPorIdAsync(Guid id);
 
+        Task<bool> ExisteUsuarioPorIDAsync(Guid id);
+
         Task<bool> ExisteUsuarioPorTelefonoAsync(string correo);
 
         Task<bool> ExisteUsuarioPorCorreoAsync(string telefono);

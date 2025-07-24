@@ -21,7 +21,7 @@ public partial class Proyecto
 
     public DateOnly FechaFin { get; set; }
 
-    public Guid? UsuarioId { get; set; }
+    public Guid UsuarioId { get; set; }
 
     [StringLength(10)]
     public string Estado { get; set; } = null!;

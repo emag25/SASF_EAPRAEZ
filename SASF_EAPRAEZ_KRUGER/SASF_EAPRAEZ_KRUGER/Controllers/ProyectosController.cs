@@ -1,48 +1,48 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SASF_EAPRAEZ_KRUGER.DTOs.Usuario;
+using SASF_EAPRAEZ_KRUGER.DTOs.Proyecto;
 using SASF_EAPRAEZ_KRUGER.Exceptions.Models;
-using SASF_EAPRAEZ_KRUGER.Services.Usuarios;
+using SASF_EAPRAEZ_KRUGER.Services.Proyectos;
 
 namespace SASF_EAPRAEZ_KRUGER.Controllers
 {
 
     [ApiController]
-    [Route("api/usuarios")]
-    public class UsuariosController : Controller
+    [Route("api/proyectos")]
+    public class ProyectosController : Controller
     {
 
-        private readonly IUsuarioService _usuarioService;
+        private readonly IProyectoService _proyectoService;
 
 
-        public UsuariosController(IUsuarioService usuarioService)
+        public ProyectosController(IProyectoService proyectoService)
         {
-            _usuarioService = usuarioService;
+            _proyectoService = proyectoService;
         }
 
 
         [HttpGet]
-        [ProducesResponseType(typeof(List<UsuarioDTO>), 200)]
+        [ProducesResponseType(typeof(List<ProyectoDTO>), 200)]
         [ProducesResponseType(typeof(ErrorModel), 400)]
         [ProducesResponseType(typeof(ErrorModel), 500)]
-        public async Task<ActionResult<List<UsuarioDTO>>> ObtenerTodos()
+        public async Task<ActionResult<List<ProyectoDTO>>> ObtenerTodos()
         {
-            List<UsuarioDTO> usuarios = await _usuarioService.ConsultarUsuariosAsync();
+            List<ProyectoDTO> proyectos = await _proyectoService.ConsultarProyectosAsync();
 
-            return Ok(usuarios);
+            return Ok(proyectos);
         }
 
 
 
         [HttpPost]
-        [ProducesResponseType(typeof(List<UsuarioDTO>), 201)]
+        [ProducesResponseType(typeof(List<ProyectoDTO>), 201)]
         [ProducesResponseType(typeof(ErrorModel), 400)]
         [ProducesResponseType(typeof(ErrorModel), 500)]
-        public async Task<ActionResult<UsuarioDTO>> Insertar(
-            [FromBody] UsuarioCreacionDTO dto)
+        public async Task<ActionResult<ProyectoDTO>> Insertar(
+            [FromBody] ProyectoCreacionDTO dto)
         {
 
-            UsuarioDTO nuevoUsuario = await _usuarioService.InsertarUsuarioAsync(dto);
-            return CreatedAtAction(nameof(ObtenerTodos), nuevoUsuario);
+            ProyectoDTO nuevoProyecto = await _proyectoService.InsertarProyectoAsync(dto);
+            return CreatedAtAction(nameof(ObtenerTodos), nuevoProyecto);
 
         }
 
@@ -54,11 +54,11 @@ namespace SASF_EAPRAEZ_KRUGER.Controllers
         [ProducesResponseType(typeof(ErrorModel), 404)]
         [ProducesResponseType(typeof(ErrorModel), 500)]
         public async Task<IActionResult> Actualizar(
-            Guid id, 
-            [FromBody] UsuarioDTO usuarioDTO)
+            Guid id,
+            [FromBody] ProyectoDTO proyectoDTO)
         {
 
-            await _usuarioService.ActualizarUsuarioAsync(id, usuarioDTO);
+            await _proyectoService.ActualizarProyectoAsync(id, proyectoDTO);
             return NoContent();
 
         }
@@ -73,7 +73,7 @@ namespace SASF_EAPRAEZ_KRUGER.Controllers
         public async Task<IActionResult> Eliminar(Guid id)
         {
 
-            await _usuarioService.EliminarUsuarioAsync(id);
+            await _proyectoService.EliminarProyectoAsync(id);
             return NoContent();
 
         }

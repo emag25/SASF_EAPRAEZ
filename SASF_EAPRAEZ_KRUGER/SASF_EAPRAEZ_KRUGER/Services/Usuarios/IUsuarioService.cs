@@ -5,7 +5,7 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Usuarios
     public interface IUsuarioService
     {
 
-        Task<List<UsuarioDTO>> ObtenerTodosAsync();
+        Task<List<UsuarioDTO>> ConsultarUsuariosAsync();
 
         Task<UsuarioDTO> InsertarUsuarioAsync(UsuarioCreacionDTO usuarioCreacionDTO);
 

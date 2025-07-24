@@ -5,7 +5,9 @@ using SASF_EAPRAEZ_KRUGER.Entities;
 using SASF_EAPRAEZ_KRUGER.Exceptions;
 using SASF_EAPRAEZ_KRUGER.Exceptions.Filters;
 using SASF_EAPRAEZ_KRUGER.Repositories.Generic;
+using SASF_EAPRAEZ_KRUGER.Repositories.Proyectos;
 using SASF_EAPRAEZ_KRUGER.Repositories.Usuarios;
+using SASF_EAPRAEZ_KRUGER.Services.Proyectos;
 using SASF_EAPRAEZ_KRUGER.Services.Usuarios;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,8 +37,12 @@ builder.Services.AddSwaggerGen(c => {
 
 // --
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
+builder.Services.AddScoped<IProyectoRepository, ProyectoRepository>();
+builder.Services.AddScoped<IProyectoService, ProyectoService>();
 
 
 var app = builder.Build();

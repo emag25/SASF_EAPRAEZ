@@ -2,7 +2,7 @@
 
 namespace SASF_EAPRAEZ_KRUGER.DTOs.Proyecto
 {
-    public class ProyectoDTO
+    public class ProyectoDTO : ProyectoCreacionDTO
     {
 
         [Required(ErrorMessage = "Identificador del proyecto es obligatorio.")]
