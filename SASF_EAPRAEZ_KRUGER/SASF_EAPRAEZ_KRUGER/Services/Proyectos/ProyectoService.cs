@@ -75,7 +75,18 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Proyectos
                 throw new InvalidIdException("El ID de la URL no coincide con el del cuerpo.");
             }
 
-            if (dto.FechaInicio < DateOnly.FromDateTime(DateTime.UtcNow))
+            Proyecto? proyecto = await _proyectoRepository.ConsultarProyectoPorIdAsync(dto.ProyectoId);
+
+            if (proyecto is null)
+            {
+                throw new RegisterNotFoundException("El proyecto no existe.");
+            }
+
+
+            bool fechaModificada = proyecto.FechaInicio != dto.FechaInicio;
+            bool fechaEsMenorFechaActual = dto.FechaInicio < DateOnly.FromDateTime(DateTime.UtcNow);
+
+            if (fechaModificada && fechaEsMenorFechaActual)
             {
                 throw new InvalidFieldException($"La fecha de inicio del proyecto debe ser mayor o igual a la actual.");
             }
@@ -83,13 +94,6 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Proyectos
             if (dto.FechaFin < dto.FechaInicio)
             {
                 throw new InvalidFieldException($"La fecha de inicio del proyecto debe ser mayor a la fecha de fin.");
-            }
-
-            Proyecto? proyecto = await _proyectoRepository.ConsultarProyectoPorIdAsync(dto.ProyectoId);
-
-            if (proyecto is null)
-            {
-                throw new RegisterNotFoundException("El proyecto no existe.");
             }
 
             if (!await _usuarioRepository.ExisteUsuarioPorIDAsync(dto.UsuarioId))

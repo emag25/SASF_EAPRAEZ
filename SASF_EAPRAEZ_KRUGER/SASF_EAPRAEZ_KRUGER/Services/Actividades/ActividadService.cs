@@ -89,16 +89,20 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Actividades
                 throw new InvalidIdException("El ID de la URL no coincide con el del cuerpo.");
             }
 
-            if (dto.Fecha < DateOnly.FromDateTime(DateTime.UtcNow))
-            {
-                throw new InvalidFieldException($"La fecha de inicio del actividad debe ser mayor o igual a la actual.");
-            }
-
             Actividad? actividad = await _actividadRepository.ConsultarActividadPorIdAsync(dto.ActividadId);
 
             if (actividad is null)
             {
                 throw new RegisterNotFoundException("El actividad no existe.");
+            }
+
+
+            bool fechaModificada = actividad.Fecha != dto.Fecha;
+            bool fechaEsMenorFechaActual = dto.Fecha < DateOnly.FromDateTime(DateTime.UtcNow);
+
+            if (fechaModificada && fechaEsMenorFechaActual)
+            {
+                throw new InvalidFieldException($"La fecha de inicio del actividad debe ser mayor o igual a la actual.");
             }
 
             Proyecto? proyecto = await _proyectoRepository.ConsultarProyectoPorIdAsync(dto.ProyectoId);
