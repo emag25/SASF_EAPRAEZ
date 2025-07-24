@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SASF_EAPRAEZ_KRUGER", "SASF_EAPRAEZ_KRUGER\SASF_EAPRAEZ_KRUGER.csproj", "{1531F0A6-6CF8-417C-AF9B-0268C4ECD1FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SASF_EAPRAEZ_KRUGER.Tests", "SASF_EAPRAEZ_KRUGER.Tests\SASF_EAPRAEZ_KRUGER.Tests.csproj", "{7DF0588A-FE3F-5832-52F5-2F89516FB92A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1531F0A6-6CF8-417C-AF9B-0268C4ECD1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1531F0A6-6CF8-417C-AF9B-0268C4ECD1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1531F0A6-6CF8-417C-AF9B-0268C4ECD1FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF0588A-FE3F-5832-52F5-2F89516FB92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF0588A-FE3F-5832-52F5-2F89516FB92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF0588A-FE3F-5832-52F5-2F89516FB92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF0588A-FE3F-5832-52F5-2F89516FB92A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

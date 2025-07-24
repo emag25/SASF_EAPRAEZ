@@ -52,7 +52,7 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Actividades
 
             if (proyecto is null)
             {
-                throw new RegisterNotFoundException($"No existe proyecto con identificador {dto.ProyectoId}.");
+                throw new ForeignKeyViolationException($"No existe proyecto con identificador {dto.ProyectoId}.");
             }
 
             if (proyecto.Estado.Equals(Constantes.ESTADO_INACTIVO))
@@ -109,7 +109,7 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Actividades
 
             if (proyecto is null)
             {
-                throw new RegisterNotFoundException($"No existe proyecto con identificador {dto.ProyectoId}.");
+                throw new ForeignKeyViolationException($"No existe proyecto con identificador {dto.ProyectoId}.");
             }
 
             if (proyecto.Estado.Equals(Constantes.ESTADO_INACTIVO))

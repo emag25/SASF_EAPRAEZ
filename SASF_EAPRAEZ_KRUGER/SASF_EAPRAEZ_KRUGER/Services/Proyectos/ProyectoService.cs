@@ -55,7 +55,7 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Proyectos
 
             if (!await _usuarioRepository.ExisteUsuarioPorIDAsync(dto.UsuarioId))
             {
-                throw new RegisterNotFoundException($"No existe usuario con identificador {dto.UsuarioId}.");
+                throw new ForeignKeyViolationException($"No existe usuario con identificador {dto.UsuarioId}.");
             }
 
             Proyecto proyecto = ProyectoMapper.ToEntity(dto);
@@ -98,7 +98,7 @@ namespace SASF_EAPRAEZ_KRUGER.Services.Proyectos
 
             if (!await _usuarioRepository.ExisteUsuarioPorIDAsync(dto.UsuarioId))
             {
-                throw new RegisterNotFoundException($"No existe usuario con identificador {dto.UsuarioId}.");
+                throw new ForeignKeyViolationException($"No existe usuario con identificador {dto.UsuarioId}.");
             }
 
             proyecto.Nombre = dto.Nombre;
