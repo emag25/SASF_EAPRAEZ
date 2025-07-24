@@ -1,4 +1,4 @@
-﻿namespace SASF_EAPRAEZ_KRUGER.Middleware.Exceptions.BadRequest
+﻿namespace SASF_EAPRAEZ_KRUGER.Exceptions.BadRequest
 {
     public class ExistingObjectException : BadRequestException
     {

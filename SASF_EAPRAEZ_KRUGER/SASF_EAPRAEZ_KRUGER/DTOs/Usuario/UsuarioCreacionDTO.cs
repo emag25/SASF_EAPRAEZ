@@ -13,19 +13,17 @@ namespace SASF_EAPRAEZ_KRUGER.DTOs.Usuario
 
         [Required(ErrorMessage = "El correo electrónico es obligatorio.")]
         [StringLength(100, ErrorMessage = "El correo electrónico no debe exceder los 100 caracteres.")]
-        [EmailAddress(ErrorMessage = "El formato del correo electrónico no es válido.")]
+        [RegularExpression(Constantes.REGEX_CORREO, ErrorMessage = "El formato del correo electrónico no es válido.")]
         public string Correo { get; set; } = null!;
 
 
         [Required(ErrorMessage = "El teléfono es obligatorio.")]
         [RegularExpression(Constantes.REGEX_NUMERO_LONGITUD_10, ErrorMessage = "El teléfono debe contener 10 dígitos numérticos.")]
-        [StringLength(10, MinimumLength = 10, ErrorMessage = "El teléfono debe contener 10 dígitos numérticos.")]
         public string Telefono { get; set; } = null!;
 
 
         [Required(ErrorMessage = "El rol es obligatorio.")]
         [RegularExpression(@"^(ADMIN|EDITOR|VIEWER)$", ErrorMessage = "El rol debe ser ADMIN, EDITOR o VIEWER.")]
-        [StringLength(20, ErrorMessage = "El rol no debe exceder los 20 caracteres.")]
         public string Rol { get; set; } = null!;
 
     }

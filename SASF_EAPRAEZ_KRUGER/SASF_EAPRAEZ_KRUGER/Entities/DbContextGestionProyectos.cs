@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SASF_EAPRAEZ_KRUGER.Entities;
 
-public partial class DbContextGP : DbContext
+public partial class DbContextGestionProyectos : DbContext
 {
-    public DbContextGP(DbContextOptions<DbContextGP> options)
+    public DbContextGestionProyectos(DbContextOptions<DbContextGestionProyectos> options)
         : base(options)
     {
     }

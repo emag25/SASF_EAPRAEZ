@@ -1,11 +1,12 @@
-﻿using SASF_EAPRAEZ_KRUGER.Middleware.Exceptions.BadRequest;
-using SASF_EAPRAEZ_KRUGER.Middleware.Exceptions.NotFound;
-using SASF_EAPRAEZ_KRUGER.Modelos;
+﻿using SASF_EAPRAEZ_KRUGER.Exceptions.BadRequest;
+using SASF_EAPRAEZ_KRUGER.Exceptions.InternalServerError;
+using SASF_EAPRAEZ_KRUGER.Exceptions.Models;
+using SASF_EAPRAEZ_KRUGER.Exceptions.NotFound;
 using SASF_EAPRAEZ_KRUGER.Utils;
 using System.Net;
 using System.Text.Json;
 
-namespace SASF_EAPRAEZ_KRUGER.Middleware
+namespace SASF_EAPRAEZ_KRUGER.Exceptions
 {
     public class ExceptionHandlingMiddleware
     {
@@ -37,14 +38,21 @@ namespace SASF_EAPRAEZ_KRUGER.Middleware
 
             context.Response.ContentType = "application/json";
 
-            ErrorResponse errorResponse = new()
+
+            ErrorModel errorResponse = new()
             {
                 Mensaje = ex.Message,
                 Excepcion = ex.GetType().Name.ToString()
             };
 
+
             switch (ex)
             {
+                case ModelValidationException exception:
+                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    errorResponse.Detalle = exception.Errores;
+                    break;
+
                 case NotFoundException:
                     context.Response.StatusCode = (int)HttpStatusCode.NotFound;
                     break;
@@ -53,18 +61,23 @@ namespace SASF_EAPRAEZ_KRUGER.Middleware
                     context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                     break;
 
+                case InternalServerErrorException:
+                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    break;
+
                 default:
                     context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                     errorResponse.Mensaje = Constantes.MENSAJE_ERROR_500;
                     break;
             }
-            /*
-            GenericResponse errorResponse = new()
+
+            JsonSerializerOptions opcionesJson = new JsonSerializerOptions
             {
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            };
 
-            };*/
-
-            return context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse));
+            return context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse, opcionesJson));
         }
 
     }

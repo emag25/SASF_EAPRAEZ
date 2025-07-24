@@ -1,4 +1,4 @@
-﻿namespace SASF_EAPRAEZ_KRUGER.Middleware.Exceptions.InternalServerError
+﻿namespace SASF_EAPRAEZ_KRUGER.Exceptions.InternalServerError
 {
     public class InternalServerErrorException : Exception
     {

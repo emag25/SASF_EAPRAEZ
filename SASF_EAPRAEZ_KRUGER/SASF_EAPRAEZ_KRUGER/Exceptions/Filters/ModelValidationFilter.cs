@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
-using SASF_EAPRAEZ_KRUGER.Middleware.Exceptions.BadRequest;
+using SASF_EAPRAEZ_KRUGER.Exceptions.BadRequest;
 
-namespace SASF_EAPRAEZ_KRUGER.Filters
+namespace SASF_EAPRAEZ_KRUGER.Exceptions.Filters
 {
-    public class ValidacionModelosFiltro : IActionFilter
+    public class ModelValidationFilter : IActionFilter
     {
         public void OnActionExecuting(ActionExecutingContext context)
         {

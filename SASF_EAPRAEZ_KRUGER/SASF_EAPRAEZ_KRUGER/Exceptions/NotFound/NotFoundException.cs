@@ -1,4 +1,4 @@
-﻿namespace SASF_EAPRAEZ_KRUGER.Middleware.Exceptions.NotFound
+﻿namespace SASF_EAPRAEZ_KRUGER.Exceptions.NotFound
 {
     public class NotFoundException : Exception
     {

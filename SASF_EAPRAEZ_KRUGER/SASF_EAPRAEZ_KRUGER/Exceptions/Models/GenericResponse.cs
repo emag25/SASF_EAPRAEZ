@@ -1,4 +1,4 @@
-﻿namespace SASF_EAPRAEZ_KRUGER.Modelos
+﻿namespace SASF_EAPRAEZ_KRUGER.Exceptions.Models
 {
     public class GenericResponse<T>
     {
